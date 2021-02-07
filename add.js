@@ -54,11 +54,12 @@ inquirer.prompt(options)
         last_name: answers.lastName,
         employee_role_id: roleID
     },
-
-    )
-
-}
-
-
-    })
+    // Success or Error response to console.log //
+    function(error,results) {
+        if(error) throw error;
+        console.log("Successfully added " + answers.firstName + " " + answers.lastName );
+        app.start();
+      });
+    });
+  });
 }
