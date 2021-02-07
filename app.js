@@ -1,5 +1,5 @@
 // Global variables //
-var inquirer = require("mysql");
+var inquirer = require("inquirer");
 var mysql = require("mysql");
 var table = require("console.table");
 
