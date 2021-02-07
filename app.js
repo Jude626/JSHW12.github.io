@@ -3,7 +3,7 @@ var inquirer = require("mysql");
 var mysql = require("mysql");
 var table = require("console.table");
 
-// Creating a database connectio nto mysql //
+// Creating a database connection to mysql //
 var connection = mysql.connection({
     host: "localhost",
     port: 8080,
@@ -34,6 +34,12 @@ exports.start = () => {
             ]
         }
     ])
+// Add .then functions for each response! //
+    .then(function(response) {
+        if(response.choice === "Add an Employee") {
+            add.addEmployee();
+        }
 
-    
+    }
+
 }
