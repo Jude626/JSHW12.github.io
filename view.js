@@ -20,9 +20,17 @@ exports.viewAllEmployees = () => {
     }
 };
 
-// function to export all roles //
+// Create function to export all roles //
 exports.getAllRoles = () => {
     connection.query("SELECT * FROM company_role", function(err,results) {
+        if(error) throw error;
+        results;
+    })
+}
+
+// Create function to export all departments //
+exports.getAllDepartments = () => {
+    connection.query("SELECT * FROM department", function(err,results) {
         if(error) throw error;
         results;
     })
