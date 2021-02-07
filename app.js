@@ -45,6 +45,9 @@ exports.start = () => {
         else if(response.choice === "View All Employees") {
             view.viewAllEmployees();
         }
-    }
-
-}
+        else if(response.choice === "Exit") {
+            connection.end();
+            return;
+        } 
+    });
+};
