@@ -1,30 +1,36 @@
--- Drops the programming_db if it already exists --
-DROP DATABASE IF EXISTS seinfeld;
+-- drop the company_db if it already exists --
+DROP DATABASE IF EXISTS company_db;
 
--- Created the DB "wizard_schools_db" (only works on local connections)
-CREATE DATABASE seinfeld;
+-- Created the DB "company_db" --
+CREATE DATABASE company_db;
 
--- Use the DB wizard_schools_db for all the rest of the script
-USE seinfeld;
+-- Use the DB company_db for all the rest of the script
+USE company_db;
 
--- Created the table "schools"
-CREATE TABLE actors (
-  id int AUTO_INCREMENT,
-  name varchar(30) NOT NULL,
-  coolnessChart int NOT NULL,
-  attitudeChart varChar(30) NOT NULL,
-  PRIMARY KEY(id)
+-- Created the table "department"
+CREATE TABLE department (
+  dept_id int NOT NULL AUTO_INCREMENT,
+  dept_name varchar(30),
+  PRIMARY KEY(dept_id)
 );
 
--- Inserted a set of records into the table
-INSERT INTO actors (name, coolnessChart, attitudeChart)
-VALUES ("Jerry", 65, "judgy");
+-- Created the table "roles"
+CREATE TABLE company_role (
+  role_id INT NOT NULL AUTO_INCREMENT,
+  title varchar(30) NOT NULL,
+  salary DEC(7,2) NOT NULL,
+  PRIMARY KEY(role_id),
+  FOREIGN KEY(dept_id) REFERENCES department(dept_id)
+);
 
-INSERT INTO actors (name, coolnessChart, attitudeChart)
-VALUES ("Elaine", 90, "tough");
-
-INSERT INTO actors (name, coolnessChart, attitudeChart)
-VALUES ("George", 80, "unaware");
-
-INSERT INTO actors (name, coolnessChart, attitudeChart)
-VALUES ("Kramer", 70, "bumbling");
+-- Created the table "employees"
+CREATE TABLE employees (
+  emp_id INT NOT NULL AUTO_INCREMENT,
+  first_name varchar(30) NOT NULL,
+  last_name varchar(30) NOT NULL,
+  emp_role_id INT NOT NULL,
+  manager_id INT,
+  PRIMARY KEY(emp_id),
+  FOREIGN KEY(emp_role_id) REFERENCES company_role(role_id)
+  FOREIGN KEY(manager_id) REFERENCES employees(emp_id)
+);
