@@ -11,3 +11,12 @@ var connection = mysql.connection({
     database: "",
 });
 
+// Creating Add employee function //
+exports.addEmployee = () => {
+    view.getAllRoles(function(rolesResults) {
+        var roles = [];
+        for(var i = 0; i < rolesResults.length; i++) {
+            roles.push(rolesResults[i].title);
+        }
+    })
+}
