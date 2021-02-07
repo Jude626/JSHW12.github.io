@@ -36,4 +36,10 @@ exports.getAllDepartments = () => {
     })
 }
 
-//
+// Create function to export all employees //
+exports.getAllEmployees = () => {
+    connection.query("SELECT * FROM employees", function(err,results) {
+        if(error) throw error;
+        results;
+    })
+}
