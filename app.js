@@ -19,3 +19,21 @@ connection.connect(function(error) {
     exports.start();
 });
 
+// Creating inquirer prompt for application start //
+exports.start = () => {
+    inquirer.prompt([
+        {
+            type: "list",
+            message: "Select an option:",
+            name: "choice",
+            choices: [
+                "Add an Employee",
+                "Update an Employee",
+                "View All Employees",
+                "Exit"
+            ]
+        }
+    ])
+
+    
+}
