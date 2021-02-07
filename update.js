@@ -27,3 +27,17 @@ exports.updateRole = () => {
         };
         employees.push(fullName)
     };
+// Create inquirer prompt //
+inquirer.prompt([
+    {
+        type: "list",
+        message: "Which employee do you want to Update?",
+        name: "employee",
+        choices: employees
+    }
+]).then((answers) => {
+    view.getAllRoles(function (rolesResults) {
+        var roles = [];
+        console.log(answers.employee);
+    })
+})
