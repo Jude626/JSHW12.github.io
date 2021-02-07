@@ -47,6 +47,16 @@ inquirer.prompt(options)
             roleId = rolesResults[i].role_id
         }
     }
+    // Add to mysql database //
+    connection.query("INSERT INTO employees SET ?",
+    {
+        first_name: answers.firstName,
+        last_name: answers.lastName,
+        employee_role_id: roleID
+    },
+
+    )
+
 }
 
 
