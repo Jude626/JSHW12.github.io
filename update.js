@@ -1,4 +1,5 @@
 // Global Variables //
+const { registerPrompt } = require("inquirer");
 var inquirer = require("inquirer");
 var mysql = require("mysql");
 
@@ -39,5 +40,16 @@ inquirer.prompt([
     view.getAllRoles(function (rolesResults) {
         var roles = [];
         console.log(answers.employee);
+    for (var i = 0; i < rolesResults.length; i++) {
+        var fullRole = {
+            name: rolesResults[i].title,
+            value: {
+                id: rolesResults[i].role_id,
+                role: rolesResults[i].title,
+            }
+        }
+        roles.push(fullRole);
+    };
+
     })
 })
