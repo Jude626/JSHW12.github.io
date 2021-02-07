@@ -18,5 +18,29 @@ exports.addEmployee = () => {
         for(var i = 0; i < rolesResults.length; i++) {
             roles.push(rolesResults[i].title);
         }
+        var options = [
+            {
+                type: "input",
+                message: "Enter Employee's First Name:",
+                name: "firstName",
+                default: "Jude"
+            },
+            {
+                type: "input",
+                message: "Enter Employee's Last Name:",
+                name: "lastName",
+                default: "Sanchez"
+            },
+            {
+                type: "list",
+                message: "Enter Employee's Role:",
+                name: "role",
+                choices: roles,
+            }
+        ];
+
+
+
+        
     })
 }
