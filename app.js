@@ -39,7 +39,9 @@ exports.start = () => {
         if(response.choice === "Add an Employee") {
             add.addEmployee();
         }
-
+        else if(response.choice === "Update an Employee") {
+            update.updateEmployee();
+        }
     }
 
 }
