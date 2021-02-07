@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/Jude626/JSHW12.github.io/issues"
   },
-  "homepage": "https://github.com/Jude626/JSHW12.github.io#readme"
+  "homepage": "https://github.com/Jude626/JSHW12.github.io#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  }
 }
