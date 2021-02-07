@@ -38,9 +38,17 @@ exports.addEmployee = () => {
                 choices: roles,
             }
         ];
+// Create prompt and for loop to add to the array //
+inquirer.prompt(options)
+.then((answers) => {
+    var roleId = null;
+    for(var i=0; i < rolesResults.length; i++) {
+        if(rolesResults[i].title === answers.role) {
+            roleId = rolesResults[i].role_id
+        }
+    }
+}
 
 
-
-        
     })
 }
