@@ -1,5 +1,4 @@
 // Global Variables //
-const { registerPrompt } = require("inquirer");
 var inquirer = require("inquirer");
 var mysql = require("mysql");
 
@@ -27,8 +26,8 @@ exports.updateRole = () => {
             }
         };
         employees.push(fullName)
-    };
-// Create inquirer prompt //
+    }
+// Create inquirer prompt to pick employee //
 inquirer.prompt([
     {
         type: "list",
@@ -50,6 +49,23 @@ inquirer.prompt([
         }
         roles.push(fullRole);
     };
-
-    })
-})
+// Create inquirer prompt to ask which role they would like to be updated //
+inquirer.prompt([
+    {
+        type: "list",
+        message: `Which role do you want to update ${answers.employee.firstname} to?`,
+        name: "role",
+        choices: roles
+    }
+]).then((results) => {
+    console.log(results.role)
+    connection.query("UPDATE employees SET emp_role_id = ? WHERE emp_id = ?"),[results.role.id, answers.employee.id],function (error, results) {
+        if (error) throw error;
+        console.log("Successfully updated " + answers.employee.id + "!");
+        app.start();
+                    }
+                });
+            });
+        });
+    });
+};
