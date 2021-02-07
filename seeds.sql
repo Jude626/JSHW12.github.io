@@ -9,3 +9,7 @@ INSERT INTO company_role (title, salary, dept_id) VALUES
 ("Pool Maintenance", 30000.00, 3),
 ("Janitor", 20000.00, 3);
 
+INSERT INTO employees (first_name, last_name, emp_role_id, manager_id) VALUES
+("Obi-wan", "Kenobi", 1, 1),
+("Ahsoka", "Tano", 2, null),
+("Anakin", "Skywalker", 3, null);
