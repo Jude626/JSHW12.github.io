@@ -42,6 +42,9 @@ exports.start = () => {
         else if(response.choice === "Update an Employee") {
             update.updateEmployee();
         }
+        else if(response.choice === "View All Employees") {
+            view.viewAllEmployees();
+        }
     }
 
 }
