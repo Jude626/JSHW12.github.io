@@ -12,3 +12,10 @@ var connection = mysql.connection({
     database: "",
 });
 
+// Boiler plate connection error log //
+connection.connect(function(error) {
+    if (error) throw error;
+    console.log("Connected as id " + connection.threadId + "\n");
+    exports.start();
+});
+
