@@ -4,7 +4,7 @@ var mysql = require("mysql");
 var table = require("console.table");
 
 // Creating a database connection to mysql //
-var connection = mysql.connection({
+var connection = mysql.createConnection({
     host: "localhost",
     port: 8080,
     user: "root",
