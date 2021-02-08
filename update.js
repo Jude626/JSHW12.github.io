@@ -1,14 +1,16 @@
 // Global Variables //
 var inquirer = require("inquirer");
 var mysql = require("mysql");
+var app = require("./app");
+var view = require("./view");
 
 // mysql connection, copied from app.js page //
 var connection = mysql.createConnection({
     host: "localhost",
-    port: 8080,
+    port: 3306,
     user: "root",
-    password: "",
-    database: "",
+    password: "Kay626#",
+    database: "company_db",
 });
 
 // Creating Update employee function //

@@ -2,14 +2,17 @@
 var inquirer = require("inquirer");
 var mysql = require("mysql");
 var table = require("console.table");
+var add = require("./add");
+var update = require("./update");
+var view = require("./view");
 
 // Creating a database connection to mysql //
 var connection = mysql.createConnection({
     host: "localhost",
-    port: 8080,
+    port: 3306,
     user: "root",
-    password: "",
-    database: "",
+    password: "Kay626#",
+    database: "company_db",
 });
 
 // Boiler plate connection error log //
@@ -40,7 +43,7 @@ exports.start = () => {
             add.addEmployee();
         }
         else if(response.choice === "Update an Employee") {
-            update.updateEmployee();
+            update.updateRole();
         }
         else if(response.choice === "View All Employees") {
             view.viewAllEmployees();

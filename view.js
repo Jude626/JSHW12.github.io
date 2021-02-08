@@ -1,14 +1,15 @@
 // Global Variables //
 var inquirer = require("inquirer");
 var mysql = require("mysql");
+var app = require("./app");
 
 // mysql connection, copied from app.js page //
 var connection = mysql.createConnection({
     host: "localhost",
-    port: 8080,
+    port: 3306,
     user: "root",
-    password: "",
-    database: "",
+    password: "Kay626#",
+    database: "company_db",
 });
 
 // Creating view employees function //
@@ -22,17 +23,19 @@ exports.viewAllEmployees = () => {
 
 // Create function to export all roles //
 exports.getAllRoles = () => {
-    connection.query("SELECT * FROM company_role", function(err,results) {
+    var results = connection.querySync("SELECT * FROM company_role", function(error,results) {
         if(error) throw error;
-        results;
+        return results;  
     })
+    var response = results.fetchAllSync() ;
+    console.log(response);
 }
 
 // Create function to export all departments //
 exports.getAllDepartments = () => {
-    connection.query("SELECT * FROM department", function(err,results) {
+    connection.query("SELECT * FROM department", function(error,results) {
         if(error) throw error;
-        results;
+        return results;
     })
 }
 
@@ -40,6 +43,6 @@ exports.getAllDepartments = () => {
 exports.getAllEmployees = () => {
     connection.query("SELECT * FROM employees", function(err,results) {
         if(error) throw error;
-        results;
+        return results;
     })
 }
