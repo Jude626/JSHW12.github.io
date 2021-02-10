@@ -1,5 +1,5 @@
-# JSHW10.github.io
-# JS / Columbia Coding HW-10 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+# JSHW12.github.io
+# JS / Columbia Coding HW-12 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
 ## Table of Contents
  - [Installation](#installation) 
