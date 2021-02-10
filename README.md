@@ -26,4 +26,4 @@ Comments or Concerns? Please contact me with the information provided below!
 - Repository: https://github.com/Jude626/JSHW12.github.io
 
 ## Demo
-![](demo12.mp4)
+![](demo12.gif)
