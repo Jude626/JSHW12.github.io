@@ -23,12 +23,14 @@ exports.viewAllEmployees = () => {
 
 // Create function to export all roles //
 exports.getAllRoles = () => {
-    var results = connection.querySync("SELECT * FROM company_role", function(error,results) {
-        if(error) throw error;
-        return results;  
+    return new Promise (function(resolve, reject){
+       var results = connection.query("SELECT * FROM company_role", function(error,results) {
+        if(error) reject(error);
+        resolve(results);  
     })
-    var response = results.fetchAllSync() ;
-    console.log(response);
+    
+    }) 
+   
 }
 
 // Create function to export all departments //

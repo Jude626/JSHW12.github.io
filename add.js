@@ -56,7 +56,7 @@ inquirer.prompt(options)
     {
         first_name: answers.firstName,
         last_name: answers.lastName,
-        employee_role_id: roleID
+        employee_role_id: answers.roleID
     },
     // Success or Error response to console.log //
     function(error,results) {
