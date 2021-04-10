@@ -31,4 +31,24 @@ exports.removeEmployee = () => {
         };
         employees.push(fullName);
       }
-      
+
+       // Create inquirer prompt to pick employee //
+    inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "Which employee do you want to Delete?",
+        name: "employee",
+        choices: employees,
+      },
+    ])
+    .then((answers) => {
+      let query = mysql.format("DELETE FROM employees WHERE emp_id = ?", [answers.employee.id]);
+      connection.query(query, function (error, results) {
+        if (error) throw error;
+        console.log("Successfully removed " + answers.employee.firstname + "!");
+        app.start();
+      });
+    });
+});
+};
