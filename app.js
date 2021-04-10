@@ -5,6 +5,7 @@ var table = require("console.table");
 var add = require("./add");
 var update = require("./update");
 var view = require("./view");
+var remove = require("./remove");
 
 // Creating a database connection to mysql //
 var connection = mysql.createConnection({
