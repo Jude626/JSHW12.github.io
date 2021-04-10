@@ -55,19 +55,22 @@ exports.addEmployee = async () => {
           roleId = rolesResults[i].role_id;
         }
       }
-      
+
     // Add to mysql database //
-    connection.query("INSERT INTO employees SET ?",
-    {
-        first_name: answers.firstName,
-        last_name: answers.lastName,
-        employee_role_id: answers.roleID
-    },
-    // Success or Error response to console.log //
-    function(error,results) {
-        if(error) throw error;
-        console.log("Successfully added " + answers.firstName + " " + answers.lastName );
-        app.start();
-      });
+      connection.query(
+        "INSERT INTO employees SET ?",
+        {
+          first_name: answers.firstName,
+          last_name: answers.lastName,
+          emp_role_id: roleId,
+        },
+        // Success or Error response to console.log //
+        function (error, results) {
+          if (error) throw error;
+          console.log("Successfully added " + answers.firstName + " " + answers.lastName);
+          app.start();
+        }
+      );
     });
-}
+  });
+};
