@@ -2,7 +2,9 @@
 var inquirer = require("inquirer");
 var mysql = require("mysql");
 var app = require("./app");
-var view = require("./view")
+var view = require("./view");
+const dotenv = require("dotenv");
+dotenv.config();
 
 // mysql connection, copied from app.js page //
 var connection = mysql.createConnection({
