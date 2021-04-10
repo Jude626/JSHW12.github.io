@@ -13,37 +13,36 @@ var connection = mysql.createConnection({
     user: "root",
     password: process.env.PASSWORD,
     database: "company_db",
-});
+  });
 
 // Creating Add employee function //
 exports.addEmployee = async () => {
-    
-    var rolesResults = await view.getAllRoles()
-        console.log(rolesResults)
-        var roles = [];
-        for(var i = 0; i < rolesResults.length; i++) {
-            roles.push(rolesResults[i].title);
-        }
-        var options = [
-            {
-                type: "input",
-                message: "Enter Employee's First Name:",
-                name: "firstName",
-                default: "Jude"
-            },
-            {
-                type: "input",
-                message: "Enter Employee's Last Name:",
-                name: "lastName",
-                default: "Sanchez"
-            },
-            {
-                type: "list",
-                message: "Enter Employee's Role:",
-                name: "role",
-                choices: roles,
-            }
-        ];
+    view.getAllRoles((rolesResults) => {
+      var roles = [];
+      for (var i = 0; i < rolesResults.length; i++) {
+        roles.push(rolesResults[i].title);
+      }
+      var options = [
+        {
+          type: "input",
+          message: "Enter Employee's First Name:",
+          name: "firstName",
+          default: "Jude",
+        },
+        {
+          type: "input",
+          message: "Enter Employee's Last Name:",
+          name: "lastName",
+          default: "Sanchez",
+        },
+        {
+          type: "list",
+          message: "Enter Employee's Role:",
+          name: "role",
+          choices: roles,
+        },
+      ];
+      
 // Create prompt and for loop to add to the array //
 inquirer.prompt(options)
 .then((answers) => {
