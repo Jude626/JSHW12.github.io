@@ -8,13 +8,13 @@
  - [Tests](#tests) 
 
 ## Description 
-- Attempted to create an employee manager app that allows the user to supervise & maintain employee maintenance.
+- Updated and created an employee manager app that allows the user to supervise & maintain employee maintenance.
 
 ## Installation
-- Steps required to install the project: Download the repository, open app.js in your terminal, & enter "node app.js" to activate the manager.
+- Steps required to install the project: Download the repository, open in integrated terminal, then type "npm start" to activate the manager.
 
 ## Usage
-- Examples for use: Attempt-demo provided below..
+- Examples for use: Demo provided below!
  
 ## License
 - License(s) used: MIT
